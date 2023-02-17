@@ -1,0 +1,59 @@
+[
+	{
+		"path": "asdf",
+		"route": "/slide1",
+		"title": "Going electric starts with understanding your needs",
+		"subtitle": "We need to understand your requirements so we can recommend the appropriate electric vehicle, charger and identify incentives.",
+		"buttonNext": {
+			"path": "wizard.cardA.buttonsContainer.button",
+			"label": "Create Your First Vehicle Set test",
+			"navigateTo": "/slide2"
+		},
+		"cardIcons": [
+			{
+				"icon": "",
+				"text": ""
+			},
+			{
+				"icon": "",
+				"text": ""
+			},
+			{
+				"icon": "",
+				"text": ""
+			}
+		]
+	},
+	{
+		"path": "asdf",
+		"route": "/slide2",
+		"title": "General Information",
+		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
+		"buttonNext": {
+			"path": "wizard.cardA.buttonsContainer.button",
+			"label": "Next",
+			"navigateTo":"/slide3"
+		},
+		"buttonPrev": {
+			"path": "wizard.cardA.buttonsContainer.button",
+			"label": "Back",
+			"navigateTo": "/slide1"
+		}
+	},
+	{
+		"path": "asdf",
+		"route": "/slide3",
+		"title": "General Information",
+		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
+		"buttonNext": {
+			"path": "wizard.cardA.buttonsContainer.button",
+			"label": "",
+			"navigateTo": ""
+		},
+		"buttonPrev": {
+			"path": "asdf",
+			"label": "",
+			"navigateTo": ""
+		}
+	}
+]

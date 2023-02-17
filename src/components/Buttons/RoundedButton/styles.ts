@@ -1,19 +1,18 @@
 import styled from 'styled-components';
+import { ButtonType } from './types';
 
-export const Button = styled.button`
-height: 42px;
-width: 390px;
-left: 266px;
-top: 20px;
-border-radius: 50px;
+export const Button = styled.button<ButtonType>`
 padding: 12px 40px 9px 40px;
-justify-content: space-between;
-background: #0072CE;
 
-font-family: Arial;
-font-size: 18px;
-font-weight: 700;
-line-height: 16px;
-color: #fff;
-margin: 10px auto;
+height: ${props => props.theme[props.path]?.height};
+width: ${props => props.theme[props.path]?.width};
+left: ${props => props.theme[props.path]?.left};
+border-radius: ${props => props.theme[props.path]?.borderRadius};
+background:${props => props.theme[props.path]?.background};
+font-family: ${props => props.theme[props.path]?.fontFamily};
+font-size:${props => props.theme[props.path]?.fontSize};
+font-weight:${props => props.theme[props.path]?.fontWeight};
+line-height: ${props => props.theme[props.path]?.lineHeight};
+color: ${props => props.theme[props.path]?.color};
+margin: ${props => props.theme[props.path]?.margin};
 `

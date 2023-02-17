@@ -6,25 +6,22 @@ import plugImg from '../../../assets/plug.svg';
 import { RoundedButton } from "../../Buttons/RoundedButton";
 import { CardIconList } from "../../CardIconList";
 
-type CardAType = {
-  title: string,
-  subtitle: string,
-  children: any,
-}
-
-export const CardA = () =>
+export const CardA = ({ path, title, subTitle, buttonPrev, buttonNext }: any) =>
 (
-  <Container>
-    <TitleContainer>Going electric starts with understanding your needs</TitleContainer>
-    <SubTitleContainer>We need to understand your requirements so we can recommend the appropriate electric vehicle, charger and identify incentives.</SubTitleContainer>
+  <Container path={path}>
+    <TitleContainer path="wizard.cardA.titleContainer">{title}</TitleContainer>
+    <SubTitleContainer path="wizard.cardA.subTitleContainer">{subTitle}</SubTitleContainer>
     <CardIconList>
-      <CardIcon icon={plugImg} text={'Tell us about your organization'} />
-      <CardIcon icon={carImg} text={'Tell us about your vehicles'} />
-      <CardIcon icon={graphImg} text={'See how much you can save'} />
+      <CardIcon icon={plugImg} text={'Tell us about your organization'} path="wizard.cardA.cardIconsContainer" />
+      <CardIcon icon={carImg} text={'Tell us about your vehicles'} path="wizard.cardA.cardIconsContainer" />
+      <CardIcon icon={graphImg} text={'See how much you can save'} path="wizard.cardA.cardIconsContainer" />
     </CardIconList>
-    <ButtonsContainer>
-      <RoundedButton label='text' />
-    </ButtonsContainer>
+    {(buttonPrev || buttonNext) &&
+      <ButtonsContainer path="wizard.cardA.buttonsContainer">
+        {buttonPrev}
+        {buttonNext}
+      </ButtonsContainer>
+    }
   </Container>
 )
 

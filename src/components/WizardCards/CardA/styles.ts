@@ -1,36 +1,41 @@
 import styled from 'styled-components';
+import { CardAButtonsContainerType, CardAContainerType, CardASubTitleContainerType, CardATileContainerType } from './types';
 
-export const Container = styled.div`
-  background: var(--cardBackgroundColor);
-  min-height: 552px;
-  margin: 81px 195px 181px;
+export const Container = styled.div<CardAContainerType>`
   display:flex;
   flex-direction: column;
-  justify-content:space-around;
+  align-items: ${props => props.theme[props.path]?.alignItems};
+  background: ${props => props.theme[props.path]?.backgroundColor};
+  min-height: ${props => props.theme[props.path]?.minHeight};
+  margin: ${props => props.theme[props.path]?.marginTopRightBottomLeft};
+  justify-content:${props => props.theme[props.path]?.justifyContent};
 `;
 
-export const TitleContainer = styled.h1`
-  font-family: Arial;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 39px;
+export const TitleContainer = styled.h1<CardATileContainerType>`
   letter-spacing: 0em;
-  text-align: center;
-  color: #404040;
+  font-family: ${props => props.theme[props.path]?.fontFamily};
+  font-size: ${props => props.theme[props.path]?.fontSize};
+  font-weight: ${props => props.theme[props.path]?.fontWeight};
+  line-height: ${props => props.theme[props.path]?.lineHeight};
+  text-align: ${props => props.theme[props.path]?.textAlign};
+  color: ${props => props.theme[props.path]?.color};
+  max-width: ${props => props.theme[props.path]?.maxWidth};
 `;
 
-export const SubTitleContainer = styled.div`
-  font-family: Arial;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
+export const SubTitleContainer = styled.p<CardASubTitleContainerType>`
   text-align: center;
-  color: #404040;
+  font-family: ${props => props.theme[props.path]?.fontFamily};
+  font-size: ${props => props.theme[props.path]?.fontSize};
+  font-weight: ${props => props.theme[props.path]?.fontWeight};
+  line-height: ${props => props.theme[props.path]?.lineHeight};
+  text-align: ${props => props.theme[props.path]?.textAlign};
+  color: ${props => props.theme[props.path]?.color};
+  max-width: ${props => props.theme[props.path]?.maxWidth};
 `;
 
-export const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled.div<CardAButtonsContainerType>`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props => props.theme[props.path]?.justifyContent};
+  max-width: ${props => props.theme[props.path]?.maxWidth};
 `;
 

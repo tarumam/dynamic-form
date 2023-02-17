@@ -1,16 +1,12 @@
 
 import { Container, Icon, Text } from "./styles";
+import { cardIconType } from "./types";
 
-type CardIconType = {
-  icon: string,
-  text: string,
-}
-
-export const CardIcon = ({ icon, text }: CardIconType) => {
+export const CardIcon = ({ icon, text, path }: cardIconType) => {
   return (
-    <Container>
-      <Icon src={icon} alt='car' />
-      <Text>{text}</Text>
+    <Container path={path}>
+      <Icon src={icon} alt='car' path='wizard.cardA.cardIconsContainer.icon' />
+      <Text path='wizard.cardA.cardIconsContainer.text'>{text}</Text>
     </Container>
   )
 };

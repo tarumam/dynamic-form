@@ -1,3 +1,5 @@
 import { Container } from "./styles";
 
-export const Header = () => <Container>Header</Container>
+export const Header = (props: any) => {
+  return <Container path={props.path}>Header</Container>
+}

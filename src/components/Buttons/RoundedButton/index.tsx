@@ -1,9 +1,5 @@
 import { Button } from './styles';
+import { RoundedButtonType } from './types';
 
-type RoundedButtonType = {
-  label: string,
-}
-
-export const RoundedButton = ({ label }: RoundedButtonType) => {
-  return <Button>{label}</Button>;
-}
+export const RoundedButton = ({ label, path }: RoundedButtonType) =>
+  <Button label={'remove this'} path={path}>{label}</Button>;
