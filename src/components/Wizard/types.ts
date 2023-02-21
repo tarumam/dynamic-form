@@ -1,5 +1,4 @@
 import { ButtonType } from "../Buttons/RoundedButton/types";
-import { cardIconType } from "../CardIcon/types";
 import { BaseComponentInterface } from "../CommonTypes/baseComponentInterface";
 
 export interface WizardType extends BaseComponentInterface {

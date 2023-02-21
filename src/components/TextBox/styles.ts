@@ -13,6 +13,7 @@ export const TextInput = styled.input<TextBoxInputType>`
   border: ${props => props.theme[props.path]?.border};
   height: ${props => props.theme[props.path]?.height};
   width: ${props => props.theme[props.path]?.width};
+  font-size: ${props => props.theme[props.path]?.fontSize};
 `
 
 export const LabelInput = styled.label<LabelInputType>`

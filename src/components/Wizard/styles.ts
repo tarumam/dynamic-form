@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { StepsContainerType, StepsIndicatorContainerType, StepType, WizardContainerType } from './types';
 
 export const Container = styled.div<WizardContainerType>`
-  flex: 1;
+  display:flex;
+  flex-direction: column;
   background: ${props => props.theme[props.path]?.backgroundColor};
   `;
 

@@ -18,7 +18,9 @@ export const Wizard = ({ path, steps }: WizardType) => {
   const [stepsManager, setStepsManager] = useState(initialState);
 
   // TODO: simplify these following by using object keys {[step]: false}
-  const getStateValue = (step: string) => stepsManager.find(f => f.step === step)?.value;
+  const getStateValue = (step: string) => {
+    debugger;
+    return stepsManager.find(f => f.step === step)?.value} ;
 
   const onChange = (value: any) => {
     const newState = stepsManager.map((obj) => {
@@ -32,6 +34,7 @@ export const Wizard = ({ path, steps }: WizardType) => {
     setStepsManager(newState)
   }
 
+  console.log(stepsManager)
   return (
     <Container path={path}>
       <StepsContainer path='wizard.stepsContainer'>
@@ -56,8 +59,8 @@ export const Wizard = ({ path, steps }: WizardType) => {
                 buttonPrev={slide.buttonPrev &&
                   <Link to={slide.buttonPrev.navigateTo ?? ''}>
                     <RoundedButton
-                      path={slide.buttonPrev!.path}
-                      label={slide.buttonPrev!.label}
+                      path={slide.buttonPrev.path}
+                      label={slide.buttonPrev.label}
                       isActive={true}
                       onClick={() => { }}
                     /></Link>}

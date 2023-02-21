@@ -9,6 +9,7 @@ export const Container = styled.div<CardAContainerType>`
   min-height: ${props => props.theme[props.path]?.minHeight};
   margin: ${props => props.theme[props.path]?.marginTopRightBottomLeft};
   justify-content:${props => props.theme[props.path]?.justifyContent};
+  padding:${props => props.theme[props.path]?.padding};
 `;
 
 export const TitleContainer = styled.h1<CardATileContainerType>`

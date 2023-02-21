@@ -1,10 +1,10 @@
 {
 	"header": {
-		"backgroundColor": "#FFF",
-		"height": "73px"
+		"backgroundColor": "gray",
+		"height": "100px"
 	},
 	"wizard": {
-		"backgroundColor": "#F5F5F5"
+		"backgroundColor": "yellow"
 	},
 	"wizard.stepsContainer": {
 		"backgroundColor": "#B9BCC0",
@@ -12,9 +12,9 @@
 		"padding": "20px",
 		"gap": "30px",
 		"textColor": "#333333",
-		"fontSize": "15px",
+		"fontSize": "22px",
 		"fontFamily": "Arial",
-		"alignItems": "center"
+		"alignItems": "left"
 	},
 	"wizard.stepsContainer.stepsIndicatorContainer": {
 		"padding": "20px",
@@ -23,15 +23,15 @@
 	"wizard.stepsContainer.step": {
 		"width": "80px",
 		"height": "4px",
-		"activeStepColor": "#0072CE",
-		"inactiveStepColor": "#595959"
+		"activeStepColor": "red",
+		"inactiveStepColor": "black"
 	},
 	"wizard.cardA": {
-		"backgroundColor": "#FFF",
-		"minHeight": "552px",
+		"backgroundColor": "green",
+		"minHeight": "352px",
 		"marginTopRightBottomLeft": "81px 195px 181px 195px",
 		"justifyContent": "space-around",
-		"alignItems": "center",
+		"alignItems": "left",
 		"padding": "20px"
 	},
 	"wizard.cardA.titleContainer": {
@@ -39,8 +39,8 @@
 		"fontSize": "34px",
 		"fontWeight": "700",
 		"lineHeight": "39px",
-		"textAlign": "center",
-		"color": "#404040",
+		"textAlign": "left",
+		"color": "white",
 		"maxWidth": "60%"
 	},
 	"wizard.cardA.subTitleContainer": {
@@ -48,89 +48,73 @@
 		"fontSize": "16px",
 		"fontWeight": "400",
 		"lineHeight": "24px",
-		"textAlign": "center",
-		"color": "#404040",
+		"textAlign": "right",
+		"color": "pink",
 		"maxWidth": "60%"
 	},
 	"wizard.cardA.textBox": {
 		"labelMargin": "6px",
 		"labelFontFamily": "Arial",
-		"labelFontSize": "14px",
+		"labelFontSize": "18px",
 		"labelWeight": "40",
-		"labelcolor": "#1A1A1A",
-		"hintMargin": "6px",
+		"labelcolor": "red",
+		"hintMargin": "16px",
 		"hintFontFamily": "Arial",
-		"hintFontSize": "11px",
+		"hintFontSize": "14px",
 		"hintWeight": "400",
-		"hintColor": "#707070",
-		"borderRadius": "4px",
+		"hintColor": "yellow",
+		"borderRadius": "15px",
 		"padding": "20px 12px 20px 12px",
 		"margin": "0px",
-		"border": "solid 1px #B9BCC0",
-		"height": "59px",
-		"width": "335px"
+		"border": "dotted 3px red",
+		"height": "79px",
+		"width": "335px",
+		"fontSize": "30px"
 	},
 	"wizard.cardA.dropdown": {
 		"labelMargin": "6px",
 		"labelFontFamily": "Arial",
 		"labelFontSize": "14px",
 		"labelWeight": "40",
-		"labelcolor": "#1A1A1A",
-		"optionsMenuMarginTop": "6px",
+		"labelcolor": "blue",
+		"optionsMenuMarginTop": "26px",
 		"optionsMenuborderRadius": "0 0 5px 5px",
 		"fontSize": "16px",
 		"fontFamily": "Arial",
-		"backgroundColor": "#FFFFFF",
+		"backgroundColor": "light-gray",
 		"borderRadius": "4px",
 		"padding": "0",
 		"margin": "0",
-		"border": "solid 1px #B9BCC0",
+		"border": "ridge 5px blue",
 		"height": "59px",
 		"width": "335px"
 	},
 	"wizard.cardA.buttonsContainer": {
-		"justifyContentWhenOneChild": "center",
-		"justifyContent": "space-between",
+		"justifyContentWhenOneChild": "left",
+		"justifyContent": "left",
 		"width": "100%"
 	},
-	"wizard.cardA.buttonsContainer.button": {
-		"activeColor": "",
-		"inactiveColor": "",
-		"height": "42px",
-		"width": "390px",
-		"borderRadius": "50px",
-		"background": "#0072CE",
-		"fontFamily": "Arial",
-		"fontSize": "18px",
-		"fontWeight": "700",
-		"lineHeight": "16px",
-		"color": "#fff",
-		"margin": "10px auto"
-	},
+
 	"wizard.cardA.buttonsContainer.buttonPrev": {
-		"activeColor": "",
-		"inactiveColor": "",
 		"height": "42px",
 		"borderRadius": "50px",
-		"background": "#0072CE",
+		"background": "white",
 		"fontFamily": "Arial",
 		"fontSize": "18px",
 		"fontWeight": "700",
 		"lineHeight": "16px",
-		"color": "#fff",
+		"color": "black",
 		"margin": "10px auto"
 	},
 	"wizard.cardA.buttonsContainer.buttonNext": {
-		"activeColor": "",
-		"inactiveColor": "",
 		"height": "42px",
 		"borderRadius": "50px",
-		"background": "#0072CE",
+		"background": "black",
 		"fontFamily": "Arial",
 		"fontSize": "18px",
 		"fontWeight": "700",
 		"lineHeight": "16px",
-		"color": "#fff",
+		"color": "white",
 		"margin": "10px auto"
 	},
 	"wizard.cardA.cardIconsContainer": {

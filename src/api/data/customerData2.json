@@ -3,8 +3,8 @@
 		"isRequired": false,
 		"path": "wizard.cardA",
 		"route": "/slide1",
-		"title": "Going electric starts with understanding your needs",
-		"subtitle": "We need to understand your requirements so we can recommend the appropriate electric vehicle, charger and identify incentives.",
+		"title": "Going electric with sorted colors",
+		"subtitle": "This is just some data for testing.",
 		"content": {
 			"path": "wizard.cardA.cardIconsContainer",
 			"type": "CardIconList",
@@ -14,25 +14,35 @@
 				"items": [
 					{
 						"icon": "plug",
-						"text": "Tell us about your organization",
+						"text": "one",
 						"alt": "plug image"
 					},
 					{
 						"icon": "car",
-						"text": "Tell us about your vehicles",
+						"text": "two",
 						"alt": "car image"
 					},
 					{
 						"icon": "graph",
-						"text": "See how much you can save",
+						"text": "three",
 						"alt": "alt image"
+					},
+					{
+						"icon": "plug",
+						"text": "one more?",
+						"alt": "plug image"
+					},
+					{
+						"icon": "car",
+						"text": "two more!",
+						"alt": "plug image"
 					}
 				]
 			}
 		},
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
-			"label": "Create Your First Vehicle Set test",
+			"label": "Next slide",
 			"navigateTo": "/slide2"
 		}
 	},
@@ -40,18 +50,17 @@
 		"isRequired": true,
 		"path": "wizard.cardA",
 		"route": "/slide2",
-		"title": "General Information",
-		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
+		"title": "Behold",
+		"subtitle": "Here you can see what a not good designer can do with colors and styles",
 		"content": {
-			"id":"btn_zipcode",
 			"path": "wizard.cardA.textBox",
 			"type": "TextBox",
-			"label": "Zip Code",
+			"label": "Type something here to enable the next step",
 			"hint": "Used to check incentive applicability and fuel prices"
 		},
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
-			"label": "Next",
+			"label": "Am I enabled?",
 			"navigateTo": "/slide3"
 		},
 		"buttonPrev": {
@@ -67,50 +76,59 @@
 		"title": "General Information",
 		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
 		"content": {
-			"id":"ddl_buildingtype",
+			"id":"btn_zipcode",
 			"path": "wizard.cardA.dropdown",
 			"type": "Dropdown",
-			"label": "Building Type",
+			"label": "Here are your options",
 			"options": [
 				{
-					"label": "Home (garage)",
+					"label": "Looks Good",
 					"value": "1"
 				},
 				{
-					"label": "Small Office",
+					"label": "Not enough",
 					"value": "2"
-				},
-				{
-					"label": "Large Office",
-					"value": "3"
-				},
-				{
-					"label": "Warehouse",
-					"value": "4"
-				},
-				{
-					"label": "Depot",
-					"value": "5"
-				},
-				{
-					"label": "School",
-					"value": "6"
-				},
-				{
-					"label": "Apartment Building",
-					"value": "7"
 				}
 			]
 		},
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
-			"label": "Next",
-			"navigateTo": "/slide1"
+			"label": "Start again?",
+			"navigateTo": "/slide4"
 		},
 		"buttonPrev": {
 			"path": "wizard.cardA.buttonsContainer.buttonPrev",
 			"label": "Back",
 			"navigateTo": "/slide2"
+		}
+	},
+	{
+		"isRequired": false,
+		"path": "wizard.cardA",
+		"route": "/slide4",
+		"title": "No!! One more slide",
+		"subtitle": "This is the extra one",
+		"content": {
+			"id":"ddl_buildingtype",
+			"path": "wizard.cardA.dropdown",
+			"type": "Dropdown",
+			"label": "What now?",
+			"options": [
+				{
+					"label": "OK... not so bad.",
+					"value": "1"
+				}
+			]
+		},
+		"buttonNext": {
+			"path": "wizard.cardA.buttonsContainer.buttonNext",
+			"label": "Let's do it again.",
+			"navigateTo": "/slide1"
+		},
+		"buttonPrev": {
+			"path": "wizard.cardA.buttonsContainer.buttonPrev",
+			"label": "Back",
+			"navigateTo": "/slide3"
 		}
 	}
 ]

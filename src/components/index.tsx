@@ -2,11 +2,15 @@ import React from "react";
 import { TextBox } from "./TextBox";
 import { CardA } from "./WizardCards/CardA";
 import { Dropdown } from "./Dropdown";
+import { CardIconList } from "./CardIconList";
+import { CardIcon } from "./CardIcon";
 
 const components = {
   TextBox,
   CardA,
-  Dropdown
+  Dropdown,
+  CardIconList,
+  CardIcon,
 }
 
 type DynamicComponent = {
@@ -15,7 +19,7 @@ type DynamicComponent = {
 };
 
 export const BuildComponent = ({ type, ...props }: DynamicComponent) => {
-  
+
   if (!type) {
     console.error(`Error: No component type defined '${type}'.`);
     return null;
@@ -30,5 +34,6 @@ export const BuildComponent = ({ type, ...props }: DynamicComponent) => {
 
   const componentProps = props as React.ComponentProps<typeof Component>;
 
-  return <Component {...componentProps} path={componentProps.path}/>;
+  //TODO: Inform Id as parameter
+  return <Component id={`${componentProps.path}_${type}`} {...componentProps} path={componentProps.path} />;
 };
