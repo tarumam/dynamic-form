@@ -24,7 +24,8 @@ export interface StepType extends BaseComponentInterface {
   buttonPrev?: ButtonType,
   route?: string,
   isActive?: boolean,
-  // cardIcons?: cardIconType[],
+  content?: any,
+  isRequired: boolean,
 }
 
 export interface WizardDataType {

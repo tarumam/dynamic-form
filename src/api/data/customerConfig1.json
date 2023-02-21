@@ -14,7 +14,7 @@
 		"textColor": "#333333",
 		"fontSize": "15px",
 		"fontFamily": "Arial",
-		"alignItems":"center"
+		"alignItems": "center"
 	},
 	"wizard.stepsContainer.stepsIndicatorContainer": {
 		"padding": "20px",
@@ -31,28 +31,7 @@
 		"minHeight": "552px",
 		"marginTopRightBottomLeft": "81px 195px 181px 195px",
 		"justifyContent": "space-around",
-		"alignItems":"center",
-		"wizard.slides": [
-			{
-				"contentType": "IconList",
-				"buttonRoute": "go to next",
-				"buttonText": "teste",
-				"buttonColor": "azul",
-				"buttonTextColor": "branco",
-				"title": "this is first slide",
-				"subTitle": "this is first slide subtitle",
-				"content": [
-					{
-						"icon": "icon 1",
-						"text": "text icon 1"
-					},
-					{
-						"icon": "icon 2",
-						"text": "text icon 2"
-					}
-				]
-			}
-		]
+		"alignItems": "center"
 	},
 	"wizard.cardA.titleContainer": {
 		"fontFamily": "Arial",
@@ -72,17 +51,83 @@
 		"color": "#404040",
 		"maxWidth": "60%"
 	},
+	"wizard.cardA.textBox": {
+		"labelMargin": "6px",
+		"labelFontFamily": "Arial",
+		"labelFontSize": "14px",
+		"labelWeight": "40",
+		"labelcolor": "#1A1A1A",
+
+		"hintMargin": "6px",
+		"hintFontFamily": "Arial",
+		"hintFontSize": "11px",
+		"hintWeight": "400",
+		"hintColor": "#707070",
+
+		"borderRadius": "4px",
+		"padding": "20px 12px 20px 12px",
+		"margin": "0px",
+		"border": "solid 1px #B9BCC0",
+		"height": "59px",
+		"width": "335px"
+	},
+	"wizard.cardA.dropdown": {
+		"labelMargin": "6px",
+		"labelFontFamily": "Arial",
+		"labelFontSize": "14px",
+		"labelWeight": "40",
+		"labelcolor": "#1A1A1A",
+
+		"optionsMenuMarginTop": "6px",
+		"optionsMenuborderRadius": "0 0 5px 5px",
+
+		"fontSize": "16px",
+		"fontFamily": "Arial",
+		"backgroundColor": "#FFFFFF",
+		"borderRadius": "4px",
+		"padding": "0",
+		"margin": "0",
+		"border": "solid 1px #B9BCC0",
+		"height": "59px",
+		"width": "335px"
+	},
 	"wizard.cardA.buttonsContainer": {
-		"justifyContent": "center",
-		"maxWidth": "100%"
+		"justifyContentWhenOneChild": "center",
+		"justifyContent": "space-between",
+		"width": "100%"
 	},
 	"wizard.cardA.buttonsContainer.button": {
-		"activeColor":"",
-		"inactiveColor":"",
-		"eight": "42px",
+		"activeColor": "",
+		"inactiveColor": "",
+		"height": "42px",
 		"width": "390px",
-		"left": "266px",
-		"borderRadius":"50px",
+		"borderRadius": "50px",
+		"background": "#0072CE",
+		"fontFamily": "Arial",
+		"fontSize": "18px",
+		"fontWeight": "700",
+		"lineHeight": "16px",
+		"color": "#fff",
+		"margin": "10px auto"
+	},
+	"wizard.cardA.buttonsContainer.buttonPrev": {
+		"activeColor": "",
+		"inactiveColor": "",
+		"height": "42px",
+		"borderRadius": "50px",
+		"background": "#0072CE",
+		"fontFamily": "Arial",
+		"fontSize": "18px",
+		"fontWeight": "700",
+		"lineHeight": "16px",
+		"color": "#fff",
+		"margin": "10px auto"
+	},
+	"wizard.cardA.buttonsContainer.buttonNext": {
+		"activeColor": "",
+		"inactiveColor": "",
+		"height": "42px",
+		"borderRadius": "50px",
 		"background": "#0072CE",
 		"fontFamily": "Arial",
 		"fontSize": "18px",

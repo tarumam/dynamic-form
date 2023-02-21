@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CardAButtonsContainerType, CardAContainerType, CardASubTitleContainerType, CardATileContainerType } from './types';
 
 export const Container = styled.div<CardAContainerType>`
@@ -35,7 +35,16 @@ export const SubTitleContainer = styled.p<CardASubTitleContainerType>`
 
 export const ButtonsContainer = styled.div<CardAButtonsContainerType>`
   display: flex;
-  justify-content: ${props => props.theme[props.path]?.justifyContent};
-  max-width: ${props => props.theme[props.path]?.maxWidth};
+  width: ${props => props.theme[props.path]?.width};
+  
+  // Used this because &:only-child didn't work
+  ${props => props.oneButton && css`
+    justify-content: ${props.theme[props.path]?.justifyContentWhenOneChild};
+  `}
+  
+  // Used this because  &:not(:only-child) didn't work
+  ${props => !props.oneButton && css`
+    justify-content: ${props.theme[props.path]?.justifyContent};
+  `}
 `;
 

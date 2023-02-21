@@ -17,5 +17,5 @@ export interface CardASubTitleContainerType extends BaseComponentInterface {
 }
 
 export interface CardAButtonsContainerType extends BaseComponentInterface {
-
+  oneButton: boolean;
 }
