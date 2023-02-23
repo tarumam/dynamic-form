@@ -1,4 +1,4 @@
-import { ButtonType } from "../Buttons/RoundedButton/types";
+import { LinkButtonProps } from "../Buttons/LinkButton/types";
 import { BaseComponentInterface } from "../CommonTypes/baseComponentInterface";
 
 export interface WizardType extends BaseComponentInterface {
@@ -8,23 +8,22 @@ export interface WizardType extends BaseComponentInterface {
 export interface WizardContainerType extends BaseComponentInterface {
 }
 
-
 export interface StepsContainerType extends BaseComponentInterface {
 }
 
-export interface StepsIndicatorContainerType extends BaseComponentInterface{
+export interface StepsIndicatorContainerType extends BaseComponentInterface {
 
 }
 
 export interface StepType extends BaseComponentInterface {
-  title?: string,
-  subtitle?: string,
-  buttonNext?: ButtonType,
-  buttonPrev?: ButtonType,
-  route?: string,
-  isActive?: boolean,
+  buttonNext?: LinkButtonProps,
+  buttonPrev?: LinkButtonProps,
   content?: any,
+  isActive?: boolean,
   isRequired: boolean,
+  route: string,
+  subtitle?: string,
+  title?: string,
 }
 
 export interface WizardDataType {

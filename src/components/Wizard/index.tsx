@@ -1,84 +1,100 @@
-import { RoundedButton } from "../Buttons/RoundedButton";
 import { CardA } from "../WizardCards/CardA";
 import { Container, StepsContainer, Step, StepsIndicatorContainer } from "./styles";
 import { WizardType } from "./types";
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import { BuildComponent } from "..";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { If } from "../If";
+import { LinkButton } from "../Buttons/LinkButton";
+
+
+const initialState = (steps: WizardType['steps']) => {
+  return steps.reduce<{ [id: string]: string }>((acc, step) => {
+    if (step.content.id) {
+      return {
+        ...acc,
+        [step.content.id]: ''
+      };
+    }
+    return acc;
+  }, {});
+};
 
 export const Wizard = ({ path, steps }: WizardType) => {
-  if (!steps || steps.length === 0) {
-    <div>No steps to show</div>
-  };
+  const [stepsManager, setStepsManager] = useState(initialState(steps));
 
   const { pathname } = useLocation();
   const routes = steps.map(step => step.route);
   const activeIndex = steps.findIndex(step => step.route === pathname) + 1;
-  const initialState = steps.map(s => ({ "step": s.route, "value": '' }))
-  const [stepsManager, setStepsManager] = useState(initialState);
 
-  // TODO: simplify these following by using object keys {[step]: false}
-  const getStateValue = (step: string) => {
-    debugger;
-    return stepsManager.find(f => f.step === step)?.value} ;
+  const getStateValue = useCallback((id: string) => {
+    const result = stepsManager[id];
+    return result;
+  }, [stepsManager]);
 
-  const onChange = (value: any) => {
-    const newState = stepsManager.map((obj) => {
-      if (obj.step === pathname) {
-        return { ...obj, value: value };
-      } else {
-        return obj;
-      }
-    });
+  const onChange = useCallback((key: string, value: any) => {
+    const newStepsManager = { ...stepsManager };
+    newStepsManager[key] = value;
+    setStepsManager(newStepsManager);
+  }, [stepsManager]);
 
-    setStepsManager(newState)
-  }
-
-  console.log(stepsManager)
   return (
     <Container path={path}>
-      <StepsContainer path='wizard.stepsContainer'>
-        Step {activeIndex} of {steps.length}
-        <StepsIndicatorContainer path="wizard.stepsContainer.stepsIndicatorContainer">
-          {steps.map((slide, index) => slide.route &&
-            <Link key={`${slide.route}_${index}`} to={slide.route}>
-              <Step path='wizard.stepsContainer.step' isActive={routes.indexOf(pathname) >= routes.indexOf(slide.route)} isRequired={slide.isRequired} />
-            </Link>)
-          }
-        </StepsIndicatorContainer>
-      </StepsContainer>
-      <Routes>
-        {steps.map((slide, idx) => slide.route &&
-          <Route
-            key={`${slide.route}_${idx}`}
-            path={slide.route}
-            element={
-              <CardA path='wizard.cardA'
-                title={slide.title}
-                subtitle={slide.subtitle}
-                buttonPrev={slide.buttonPrev &&
-                  <Link to={slide.buttonPrev.navigateTo ?? ''}>
-                    <RoundedButton
-                      path={slide.buttonPrev.path}
-                      label={slide.buttonPrev.label}
+      <If test={steps?.length > 0}>
+        <StepsContainer path='wizard.stepsContainer'>
+          Step {activeIndex} of {steps.length}
+          <StepsIndicatorContainer path="wizard.stepsContainer.stepsIndicatorContainer">
+            {steps.map((step, index) => step.route &&
+              <Link key={`${step.route}_${index}`} to={step.route}>
+                <Step
+                  path='wizard.stepsContainer.step'
+                  isActive={routes.indexOf(pathname) >= routes.indexOf(step.route)}
+                  isRequired={step.isRequired}
+                  route={step.route}
+                />
+              </Link>)
+            }
+          </StepsIndicatorContainer>
+        </StepsContainer>
+        <Routes>
+          {steps.map((step, idx) => step.route &&
+            <Route
+              key={`${step.route}_${idx}`}
+              path={step.route}
+              element={
+                <CardA path='wizard.cardA'
+                  title={step.title}
+                  subtitle={step.subtitle}
+                  buttonPrev={step.buttonPrev &&
+                    <LinkButton
+                      navigateTo={step.buttonPrev.navigateTo}
+                      path={step.buttonPrev.path}
+                      label={step.buttonPrev.label}
                       isActive={true}
-                      onClick={() => { }}
-                    /></Link>}
-                buttonNext={slide.buttonNext &&
-                  <Link to={slide.buttonNext.navigateTo ?? ''}>
-                    <RoundedButton path={slide.buttonNext.path}
-                      label={slide.buttonNext!.label}
-                      isActive={slide.isRequired ? !!getStateValue(slide.route) : true}
-                      onClick={() => { }}
-                    />
-                  </Link>}
-              >
-                <BuildComponent onChange={onChange} type={slide.content.type} value={getStateValue(slide.route)} {...slide.content} />
-              </CardA>}
-          />)}
-      </Routes>
-    </Container>
+                    />}
+                  buttonNext={step.buttonNext &&
+                    <LinkButton
+                      navigateTo={step.buttonNext.navigateTo}
+                      path={step.buttonNext.path}
+                      label={step.buttonNext!.label}
+                      isActive={step.isRequired ? !!getStateValue(step.content.id) : true}
+                    />}
+                >
+                  <BuildComponent
+                    {...step.content}
+                    path={step.content.path}
+                    id={step.content.id}
+                    type={step.content.type}
+                    onChange={onChange}
+                    value={getStateValue(step.content.id)} />
+                </CardA>}
+            />)}
+          <Route path="*" element={<Navigate to={steps[0].route} />} />
+        </Routes>
+      </If>
+      <If test={!steps || steps.length === 0}>
+        <div>No steps were supplied</div>
+      </If>
+    </Container >
   )
 }
-
-// TODO: Remove bad code on links (??)

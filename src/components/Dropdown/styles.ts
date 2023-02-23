@@ -1,19 +1,11 @@
 import ReactSelect, { Props as SelectProps } from 'react-select';
 import styled from 'styled-components';
-import { DropdownType, LabelInputType } from './types';
+import { DropdownType } from './types';
 
 export const DropdownContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const LabelInput = styled.label<LabelInputType>`
- margin: ${props => props.theme[props.path]?.labelMargin};
- font-family: ${props => props.theme[props.path]?.labelFontFamily};
- font-size: ${props => props.theme[props.path]?.labelFontSize};
- font-size: ${props => props.theme[props.path]?.labelWeight};
- color: ${props => props.theme[props.path]?.labelcolor};
-`
 
 export const Select = styled(ReactSelect) <DropdownType & SelectProps>`
 

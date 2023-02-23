@@ -2,26 +2,36 @@ import React from "react";
 import { TextBox } from "./TextBox";
 import { CardA } from "./WizardCards/CardA";
 import { Dropdown } from "./Dropdown";
-import { CardIconList } from "./CardIconList";
 import { CardIcon } from "./CardIcon";
+import { CardIconList } from "./CardIconList";
 
-const components = {
+const components: Record<string, React.ComponentType<any>> = {
   TextBox,
   CardA,
   Dropdown,
-  CardIconList,
   CardIcon,
+  CardIconList,
 }
 
 type DynamicComponent = {
-  type: keyof typeof components;
+  id: string,
+  type: string;
   path: string;
 };
 
-export const BuildComponent = ({ type, ...props }: DynamicComponent) => {
+export const BuildComponent = ({ id, type, path, ...props }: DynamicComponent): JSX.Element | null => {
+
+  if(!id){
+    console.warn(`Warning: No Id defined '${type} - ${path}'.`);
+  }
 
   if (!type) {
     console.error(`Error: No component type defined '${type}'.`);
+    return null;
+  }
+
+  if (!components.hasOwnProperty(type)) {
+    console.error(`Warning: No Component found for type '${type}'.`);
     return null;
   }
 
@@ -34,6 +44,5 @@ export const BuildComponent = ({ type, ...props }: DynamicComponent) => {
 
   const componentProps = props as React.ComponentProps<typeof Component>;
 
-  //TODO: Inform Id as parameter
-  return <Component id={`${componentProps.path}_${type}`} {...componentProps} path={componentProps.path} />;
+  return <Component  {...componentProps} path={path} id={id} />;
 };

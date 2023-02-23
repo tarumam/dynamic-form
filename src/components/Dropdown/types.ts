@@ -7,14 +7,11 @@ export interface DropdownComponentParams extends BaseComponentInterface {
   path: string,
   options: Option[],
   value: string,
-  onChange: (value: string) => void; 
+  onChange: (id: string, value: string) => void;
 }
 
 export interface DropdownType extends BaseComponentInterface {
-  
-}
 
-export interface LabelInputType extends BaseComponentInterface, LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 export interface Option {

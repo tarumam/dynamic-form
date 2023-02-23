@@ -142,9 +142,10 @@
 		"width": "45px"
 	},
 	"wizard.cardA.cardIconsContainer.text": {
-		"fontFamily": "Arial",
-		"fontSize": "16px",
-		"fontWeight": "600",
-		"lineHeight": "24px"
+		"labelFontFamily": "Arial",
+		"labelFontSize": "16px",
+		"labelWeight": "600",
+		"labelcolor": "#1A1A1A",
+		"labelLineHeight": "24px"
 	}
 }

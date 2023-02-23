@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HintInputType, LabelInputType, TextBoxInputType } from './types';
+import { HintInputType, TextBoxInputType } from './types';
 
 export const TextBoxContainer = styled.div`
   display: flex;
@@ -14,14 +14,6 @@ export const TextInput = styled.input<TextBoxInputType>`
   height: ${props => props.theme[props.path]?.height};
   width: ${props => props.theme[props.path]?.width};
   font-size: ${props => props.theme[props.path]?.fontSize};
-`
-
-export const LabelInput = styled.label<LabelInputType>`
- margin: ${props => props.theme[props.path]?.labelMargin};
- font-family: ${props => props.theme[props.path]?.labelFontFamily};
- font-size: ${props => props.theme[props.path]?.labelFontSize};
- font-size: ${props => props.theme[props.path]?.labelWeight};
- color: ${props => props.theme[props.path]?.labelcolor};
 `
 
 export const HintInput = styled.span<HintInputType>`

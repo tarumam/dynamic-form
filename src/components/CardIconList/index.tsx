@@ -1,13 +1,19 @@
 import { BuildComponent } from "..";
-import { cardIconType } from "../CardIcon/types";
+import { cardIconProps } from "../CardIcon/types";
 import { CardIconListContainer } from "./styles";
-import { CardIconListTypeParameters } from "./types";
+import { CardIconListProps } from "./types";
 
 
-export const CardIconList = ({ cardIcons }: CardIconListTypeParameters) => {
+export const CardIconList = ({ cardIcons }: CardIconListProps) => {
   return (
     <CardIconListContainer>
-      {cardIcons?.items.map((ci: cardIconType, idx: number) => <BuildComponent {...ci} key={`${idx}_${ci.icon}`} type={cardIcons.type} path={cardIcons.path} />)}
+      {cardIcons?.items.map(
+        (ci: cardIconProps, idx: number) =>
+          <BuildComponent {...ci}
+            key={`${idx}_${ci.icon}`}
+            id={`${idx}_${ci.icon}`}          
+            type={cardIcons.type}
+            path={cardIcons.path} />)}
     </CardIconListContainer>
   )
 }

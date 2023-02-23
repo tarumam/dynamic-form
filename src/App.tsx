@@ -18,7 +18,7 @@ export function App() {
     }
 
     const fetchCustomerData = async () => {
-      const data: StepType[] = await getCustomerData();
+      const data: Array<StepType> = await getCustomerData();
       setCustomerData(data);
     }
 
@@ -26,20 +26,21 @@ export function App() {
     fetchCustomerData();
   }, []);
 
-  // TODO: Improve data fetch
-  // TODO: Put a loading while the data is being fetched
+  if (customerSettings) {
+    return (
+      <>
+        {customerSettings &&
+          <Theme theme={customerSettings}>
+            <GlobalStyle />
+            <BrowserRouter>
+              <Header path='header' />
+              <Wizard path='wizard' steps={customerData} />
+            </BrowserRouter>
+          </Theme>
+        }
+      </>
+    );
+  }
+  return <div>Loading...</div>
 
-  return (
-    <>
-      {customerSettings &&
-        <Theme theme={customerSettings}>
-          <GlobalStyle />
-          <BrowserRouter>
-            <Header path='header' />
-            <Wizard path='wizard' steps={customerData} />
-          </BrowserRouter>
-        </Theme>
-      }
-    </>
-  );
 }

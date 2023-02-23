@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ButtonType } from './types';
+import { ButtonProps } from './types';
 
-export const Button = styled.button<ButtonType>`
+export const Button = styled.button<ButtonProps>`
 padding: 12px 40px 9px 40px;
 
 height: ${props => props.theme[props.path]?.height};

@@ -1,15 +1,11 @@
-import { LabelHTMLAttributes } from 'react';
 import { BaseComponentInterface } from "../CommonTypes/baseComponentInterface";
 
-export interface TextBoxComponent extends BaseComponentInterface {
+export interface TextBoxProps extends BaseComponentInterface {
   id: string;
   label: string;
   hint: string;
   value: string;
-  onChange(text: string): void;
-}
-
-export interface LabelInputType extends BaseComponentInterface, LabelHTMLAttributes<HTMLLabelElement> {
+  onChange(id:string, text: string): void;
 }
 
 export interface TextBoxInputType extends BaseComponentInterface {

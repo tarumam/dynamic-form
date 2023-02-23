@@ -1,22 +1,24 @@
-import { ChangeEvent, useState } from "react";
-import { HintInput, LabelInput, TextInput, TextBoxContainer } from "./styles";
-import { TextBoxComponent } from "./types";
+import { ChangeEvent } from "react";
+import { HintInput, TextInput, TextBoxContainer } from "./styles";
+import { TextBoxProps } from "./types";
+import { Label } from "../Label";
 
-export const TextBox = ({ path, id, label, hint, value, onChange }: TextBoxComponent) => {
-
-  const [textBoxValue, setTextBoxValue] = useState(value);
+export const TextBox = ({ path, id, label, hint, value, onChange }: TextBoxProps) => {
 
   const handleTextBoxChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setTextBoxValue(value);
-    onChange && onChange(value);
+    onChange && onChange(id, event.target.value);
   };
 
   return (
     <TextBoxContainer>
-      <LabelInput path={path} htmlFor={id}>{label}</LabelInput>
-      <TextInput path={path} id={id} type='text' onChange={handleTextBoxChange} value={textBoxValue} />
-      <HintInput path={path}>{hint}</HintInput>
+      {label && <Label path={path} htmlFor={id} text={label}/>}
+      <TextInput
+        path={path}
+        id={id}
+        type='text'
+        onChange={handleTextBoxChange}
+        value={value} />
+      {hint && <HintInput path={path}>{hint}</HintInput>}
     </TextBoxContainer>
   )
 }

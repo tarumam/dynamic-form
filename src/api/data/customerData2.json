@@ -6,9 +6,11 @@
 		"title": "Going electric with sorted colors",
 		"subtitle": "This is just some data for testing.",
 		"content": {
+			"id": "CardIconList",
 			"path": "wizard.cardA.cardIconsContainer",
 			"type": "CardIconList",
 			"cardIcons": {
+				"id": "cardIcons",
 				"type": "CardIcon",
 				"path": "wizard.cardA.cardIconsContainer",
 				"items": [
@@ -53,6 +55,7 @@
 		"title": "Behold",
 		"subtitle": "Here you can see what a not good designer can do with colors and styles",
 		"content": {
+			"id": "txt_textbox",
 			"path": "wizard.cardA.textBox",
 			"type": "TextBox",
 			"label": "Type something here to enable the next step",

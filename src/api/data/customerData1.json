@@ -6,6 +6,7 @@
 		"title": "Going electric starts with understanding your needs",
 		"subtitle": "We need to understand your requirements so we can recommend the appropriate electric vehicle, charger and identify incentives.",
 		"content": {
+			"id": "CardIconList",
 			"path": "wizard.cardA.cardIconsContainer",
 			"type": "CardIconList",
 			"cardIcons": {

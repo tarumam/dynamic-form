@@ -17,7 +17,6 @@ export const StepsContainer = styled.div<StepsContainerType>`
   padding: ${props => props.theme[props.path]?.padding};
   font-family: ${props => props.theme[props.path]?.fontFamily};
   font-size: ${props => props.theme[props.path]?.fontSize};
-  //TODO: font color
 `;
 
 
@@ -31,7 +30,6 @@ export const StepsIndicatorContainer = styled.div<StepsIndicatorContainerType>`
   gap:${props => props.theme[props.path]?.gap};
   font-family: ${props => props.theme[props.path]?.fontFamily};
   font-size: ${props => props.theme[props.path]?.fontSize};
-  //TODO: font color
 `;
 
 export const Step = styled.div<StepType>`
