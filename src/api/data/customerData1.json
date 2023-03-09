@@ -44,11 +44,38 @@
 		"title": "General Information",
 		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
 		"content": {
-			"id":"btn_zipcode",
+			"id": "btn_zipcode",
 			"path": "wizard.cardA.textBox",
 			"type": "TextBox",
 			"label": "Zip Code",
-			"hint": "Used to check incentive applicability and fuel prices"
+			"hint": "Used to check incentive applicability and fuel prices",
+			"validationConfig": {
+				"validateOn": "onBlur",
+				"fieldValidations": {
+					"required": {
+						"value": true,
+						"message": "required field"
+					},
+					"maxLength": {
+						"value": 10,
+						"message": "Only 5 characters are allowed."
+					},
+					"pattern":{
+						"value": "^[0-9]{5}(?:-[0-9]{4})?$",
+						"message": "This is not a valid US ZipCode"
+					}
+				},
+				"dataValidations":{
+					"validData": [
+						12345,
+						23456,
+						34567,
+						45678,
+						56789
+					],
+					"message": "The informed ZipCode is not in the covered area"
+				}
+			}
 		},
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
@@ -68,7 +95,7 @@
 		"title": "General Information",
 		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
 		"content": {
-			"id":"ddl_buildingtype",
+			"id": "ddl_buildingtype",
 			"path": "wizard.cardA.dropdown",
 			"type": "Dropdown",
 			"label": "Building Type",

@@ -18,7 +18,7 @@ const data: any = {
 export const getCustomerSettings = (): Promise<object> => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data[`customerConfig${rndInt}`]);
+      resolve(data[`customerConfig1`]);
     }, 1000);
   });
 };
@@ -26,7 +26,7 @@ export const getCustomerSettings = (): Promise<object> => {
 export const getCustomerData = (): Promise<Array<StepType>> => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data[`customerData${rndInt}`]);
+      resolve(data[`customerData1`]);
     }, 1000);
   });
 };

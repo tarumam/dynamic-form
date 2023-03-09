@@ -1,11 +1,11 @@
-import { BaseComponentInterface } from "../CommonTypes/baseComponentInterface";
+import { BaseComponentInterface, ValidationConfig } from "../CommonTypes/baseComponentInterface";
 
 export interface TextBoxProps extends BaseComponentInterface {
   id: string;
   label: string;
   hint: string;
   value: string;
-  onChange(id:string, text: string): void;
+  validationConfig: ValidationConfig;
 }
 
 export interface TextBoxInputType extends BaseComponentInterface {
