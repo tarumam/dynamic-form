@@ -1,0 +1,162 @@
+{
+  "header": {
+    "background-color": "#FFF",
+    "height": "73px"
+  },
+  "wizard": {
+    "background-color": "#F5F5F5"
+  },
+  "wizard.stepsContainer": {
+    "background-color": "#B9BCC0",
+    "height": "86px",
+    "padding": "20px",
+    "gap": "30px",
+    "text-color": "#333333",
+    "font-size": "15px",
+    "font-family": "Arial",
+    "align-items": "center"
+  },
+  "wizard.stepsContainer.stepsIndicatorContainer": {
+    "padding": "20px",
+    "gap": "30px"
+  },
+  "wizard.stepsContainer.step": {
+    "width": "80px",
+    "height": "4px",
+    "activeStepColor": "#0072CE",
+    "inactiveStepColor": "#595959"
+  },
+  "wizard.cardA": {
+    "background-color": "#FFF",
+    "min-height": "552px",
+    "margin": "81px 195px 181px 195px",
+    "justify-content": "space-around",
+    "align-items": "center",
+    "padding": "20px"
+  },
+  "wizard.cardA.titleContainer": {
+    "font-family": "Arial",
+    "font-size": "34px",
+    "font-weight": "700",
+    "line-height": "39px",
+    "text-align": "center",
+    "color": "#404040",
+    "max-width": "60%"
+  },
+  "wizard.cardA.subTitleContainer": {
+    "font-family": "Arial",
+    "font-size": "16px",
+    "font-weight": "400",
+    "line-height": "24px",
+    "text-align": "center",
+    "color": "#404040",
+    "max-width": "60%"
+  },
+  "wizard.cardA.textBox": {
+    "border-radius": "4px",
+    "padding": "20px 12px 20px 12px",
+    "margin": "0px",
+    "border": "solid 1px #B9BCC0",
+    "height": "59px",
+    "width": "335px"
+  },
+  "wizard.cardA.textBox.label": {
+    "margin": "6px",
+    "font-family": "Arial",
+    "font-size": "14px",
+    "weight": "40",
+    "color": "#1A1A1A"
+  },
+  "wizard.cardA.textBox.hint": {
+    "margin": "6px",
+    "font-family": "Arial",
+    "font-size": "11px",
+    "weight": "400",
+    "color": "#707070"
+  },
+  "wizard.cardA.textBox.validation": {
+    "color": "red",
+    "font-size": "12px",
+    "font-family": "Arial"
+  },
+  "wizard.cardA.dropdown": {
+    "font-size": "16px",
+    "background-color": "#FFFFFF",
+    "border-radius": "4px",
+    "padding": "0",
+    "margin": "0",
+    "border": "solid 1px #B9BCC0",
+    "height": "59px",
+    "width": "335px"
+  },
+  "wizard.cardA.dropdown.label": {
+    "margin-top": "6px",
+    "font-family": "Arial",
+    "font-size": "14px",
+    "font-weight": "40",
+    "color": "#1A1A1A"
+  },
+  "wizard.cardA.dropdown.options": {
+    "padding-top": "6px",
+    "border-radius": "0 0 5px 5px"
+  },
+  "wizard.cardA.buttonsContainer": {
+    "justify-content": "space-between",
+    "width": "100%"
+  },
+  "wizard.cardA.buttonsContainer.button": {
+    "activeColor": "",
+    "inactiveColor": "",
+    "height": "42px",
+    "width": "390px",
+    "border-radius": "50px",
+    "background-color": "#0072CE",
+    "font-family": "Arial",
+    "font-size": "18px",
+    "font-weight": "700",
+    "line-height": "16px",
+    "color": "#fff",
+    "margin": "10px auto"
+  },
+  "wizard.cardA.buttonsContainer.buttonPrev": {
+    "activeColor": "",
+    "inactiveColor": "",
+    "height": "42px",
+    "border-radius": "50px",
+    "background-color": "#0072CE",
+    "font-family": "Arial",
+    "font-size": "18px",
+    "font-weight": "700",
+    "line-height": "16px",
+    "color": "#fff",
+    "margin": "10px auto"
+  },
+  "wizard.cardA.buttonsContainer.buttonNext": {
+    "activeColor": "",
+    "inactiveColor": "",
+    "height": "42px",
+    "border-radius": "50px",
+    "background-color": "#0072CE",
+    "font-family": "Arial",
+    "font-size": "18px",
+    "font-weight": "700",
+    "line-height": "16px",
+    "color": "#fff",
+    "margin": "10px auto"
+  },
+  "wizard.cardA.cardIconsContainer": {
+    "justify-content": "space-between",
+    "align-items": "center",
+    "max-width": "300px"
+  },
+  "wizard.cardA.cardIconsContainer.icon": {
+    "width": "45px"
+  },
+  "wizard.cardA.cardIconsContainer.text": {
+    "font-family": "Arial",
+    "font-size": "16px",
+    "font-weight": "600",
+    "color": "#1A1A1A",
+    "line-height": "24px"
+  }
+}

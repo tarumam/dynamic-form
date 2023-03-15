@@ -60,18 +60,18 @@
 						"value": 10,
 						"message": "Only 5 characters are allowed."
 					},
-					"pattern":{
+					"pattern": {
 						"value": "^[0-9]{5}(?:-[0-9]{4})?$",
 						"message": "This is not a valid US ZipCode"
 					}
 				},
-				"dataValidations":{
+				"dataValidations": {
 					"validData": [
-						12345,
-						23456,
-						34567,
-						45678,
-						56789
+						"12345",
+						"23456",
+						"34567",
+						"45678",
+						"56789"
 					],
 					"message": "The informed ZipCode is not in the covered area"
 				}

@@ -4,39 +4,27 @@ import { CardAButtonsContainerType, CardAContainerType, CardASubTitleContainerTy
 export const Container = styled.div<CardAContainerType>`
   display:flex;
   flex-direction: column;
-  align-items: ${props => props.theme[props.path]?.alignItems};
-  background: ${props => props.theme[props.path]?.backgroundColor};
-  min-height: ${props => props.theme[props.path]?.minHeight};
-  margin: ${props => props.theme[props.path]?.marginTopRightBottomLeft};
-  justify-content:${props => props.theme[props.path]?.justifyContent};
-  padding:${props => props.theme[props.path]?.padding};
+  ${(props) => css`
+    ${props.theme[props.path]}
+  `};
 `;
 
 export const TitleContainer = styled.h1<CardATileContainerType>`
   letter-spacing: 0em;
-  font-family: ${props => props.theme[props.path]?.fontFamily};
-  font-size: ${props => props.theme[props.path]?.fontSize};
-  font-weight: ${props => props.theme[props.path]?.fontWeight};
-  line-height: ${props => props.theme[props.path]?.lineHeight};
-  text-align: ${props => props.theme[props.path]?.textAlign};
-  color: ${props => props.theme[props.path]?.color};
-  max-width: ${props => props.theme[props.path]?.maxWidth};
+  ${(props) => css`
+    ${props.theme[props.path]}
+  `};
 `;
 
 export const SubTitleContainer = styled.p<CardASubTitleContainerType>`
   text-align: center;
-  font-family: ${props => props.theme[props.path]?.fontFamily};
-  font-size: ${props => props.theme[props.path]?.fontSize};
-  font-weight: ${props => props.theme[props.path]?.fontWeight};
-  line-height: ${props => props.theme[props.path]?.lineHeight};
-  text-align: ${props => props.theme[props.path]?.textAlign};
-  color: ${props => props.theme[props.path]?.color};
-  max-width: ${props => props.theme[props.path]?.maxWidth};
+  ${(props) => css`
+    ${props.theme[props.path]}
+  `};
 `;
 
 export const ButtonsContainer = styled.div<CardAButtonsContainerType>`
   display: flex;
-  width: ${props => props.theme[props.path]?.width};
   
   // Used this because &:only-child didn't work
   ${props => props.oneButton && css`
@@ -47,5 +35,9 @@ export const ButtonsContainer = styled.div<CardAButtonsContainerType>`
   ${props => !props.oneButton && css`
     justify-content: ${props.theme[props.path]?.justifyContent};
   `}
+
+  ${(props) => css`
+    ${props.theme[props.path]}
+  `};
 `;
 

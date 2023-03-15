@@ -70,6 +70,11 @@
 		"height": "59px",
 		"width": "335px"
 	},
+	"wizard.cardA.textBox.validation": {
+		"color":"red",
+		"font-size":"12px",
+		"font-family":"Arial"
+	},
 	"wizard.cardA.dropdown": {
 		"labelMargin": "6px",
 		"labelFontFamily": "Arial",

@@ -19,7 +19,7 @@ export const TextBox = ({ path, id, label, hint, value, validationConfig }: Text
     trigger(id);
   }
 
-  const isValidData: any = (value: string) => {
+  const isValidData = (value: string): string | undefined => {
     if (dataValidations.validData?.length > 0 && !dataValidations.validData.includes(value)) {
       return dataValidations.message;
     };
@@ -27,7 +27,7 @@ export const TextBox = ({ path, id, label, hint, value, validationConfig }: Text
 
   return (
     <TextBoxContainer>
-      {label && <Label path={path} htmlFor={id} text={label} />}
+      {label && <Label path={`${path}.label`} htmlFor={id} text={label} />}
       <TextInput
         {...register(id,
           {
@@ -43,10 +43,8 @@ export const TextBox = ({ path, id, label, hint, value, validationConfig }: Text
         defaultValue={value}
         {...(event && { [event]: handleValidation })}
       />
-      {hint && <HintInput path={path}>{hint}</HintInput>}
-      {errors[id] && <p role="alert">{(errors[id] as CustomFieldError)?.message}</p>}
+      {errors[id] && <Label path={`${path}.validation`} text={(errors[id] as CustomFieldError)?.message} />}
+      {hint && <HintInput path={`${path}.hint`}>{hint}</HintInput>}
     </TextBoxContainer>
   )
 }
-
-// TODO: Put some styling on errors
