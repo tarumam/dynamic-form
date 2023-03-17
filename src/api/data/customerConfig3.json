@@ -80,6 +80,7 @@
     "font-family": "Arial"
   },
   "wizard.cardA.dropdown": {
+    "font-family": "Arial",
     "font-size": "16px",
     "background-color": "#FFFFFF",
     "border-radius": "4px",
@@ -90,15 +91,20 @@
     "width": "335px"
   },
   "wizard.cardA.dropdown.label": {
-    "margin-top": "6px",
+    "margin": "6px",
     "font-family": "Arial",
     "font-size": "14px",
     "font-weight": "40",
     "color": "#1A1A1A"
   },
+  "wizard.cardA.dropdown.menu": {
+    "margin-top": "6px"
+  },
   "wizard.cardA.dropdown.options": {
     "padding-top": "6px",
-    "border-radius": "0 0 5px 5px"
+    "border-radius": "0 0 5px 5px",
+    "font-family": "Arial",
+    "font-size": "12px"
   },
   "wizard.cardA.buttonsContainer": {
     "justify-content": "space-between",
@@ -147,7 +153,8 @@
   "wizard.cardA.cardIconsContainer": {
     "justify-content": "space-between",
     "align-items": "center",
-    "max-width": "300px"
+    "max-width": "300px",
+    "text-align": "center"
   },
   "wizard.cardA.cardIconsContainer.icon": {
     "width": "45px"

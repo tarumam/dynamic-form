@@ -12,7 +12,7 @@ export const Dropdown = ({ id, label, path, options, value, onChange }: Dropdown
 
   return (
     <DropdownContainer>
-      {label && <Label path={path} htmlFor={id} text={label} />}
+      {label && <Label path={`${path}.label`} htmlFor={id} text={label} />}
       <Select
         id={id}
         path={path}

@@ -7,7 +7,7 @@ import { Label } from "../Label";
 export const CardIcon = ({ icon, text, alt, path }: cardIconProps) => {
   return (
     <Container path={path}>
-      <Image iconName={icon} alt={alt} path={`${icon}.text`} />
+      <Image iconName={icon} alt={alt} path={`${path}.icon`} />
       <Label path={`${path}.text`} text={text} />
     </Container>
   )
