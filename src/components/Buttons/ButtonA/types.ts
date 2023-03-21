@@ -1,9 +1,11 @@
 import { BaseComponentInterface } from "../../CommonTypes/baseComponentInterface";
 
-export interface LinkButtonProps extends BaseComponentInterface {
+export interface ButtonAProps extends BaseComponentInterface {
+  id: string;
   label: string;
   isActive: boolean;
-  navigateTo: string;
+  onClick: any;
+  type: "button" | "submit" | "reset" | undefined;
 }
 
 export interface ButtonProps extends BaseComponentInterface {

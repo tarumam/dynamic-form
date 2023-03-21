@@ -1,18 +1,17 @@
 import { HintInput, TextInput, TextBoxContainer } from "./styles";
 import { TextBoxProps } from "./types";
 import { Label } from "../Label";
-import { useForm, FieldError } from "react-hook-form";
+import { FieldError } from "react-hook-form";
 
 interface CustomFieldError extends FieldError {
   message: string;
 }
 
-export const TextBox = ({ path, id, label, hint, value, validationConfig }: TextBoxProps) => {
+export const TextBox = ({ register, trigger, setValue, formState, path, id, label, hint, value, validationConfig }: TextBoxProps) => {
   const { fieldValidations, validateOn, dataValidations } = validationConfig;
   const event = validateOn as keyof HTMLElementEventMap;
-  const { register, formState: { errors }, setValue, trigger } = useForm({
-    mode: 'onBlur',
-  });
+
+  const { errors } = formState;
 
   const handleValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(id, event.target.value);

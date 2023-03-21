@@ -3,6 +3,7 @@
 		"isRequired": false,
 		"path": "wizard.cardA",
 		"route": "/slide1",
+		"nextNavigateTo": "/slide2",
 		"title": "Going electric starts with understanding your needs",
 		"subtitle": "We need to understand your requirements so we can recommend the appropriate electric vehicle, charger and identify incentives.",
 		"content": {
@@ -34,13 +35,15 @@
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
 			"label": "Create Your First Vehicle Set test",
-			"navigateTo": "/slide2"
+			"type": "button"
 		}
 	},
 	{
 		"isRequired": true,
 		"path": "wizard.cardA",
 		"route": "/slide2",
+		"nextNavigateTo": "/slide3",
+		"prevNavigateTo": "/slide1",
 		"title": "General Information",
 		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
 		"content": {
@@ -50,7 +53,7 @@
 			"label": "Zip Code",
 			"hint": "Used to check incentive applicability and fuel prices",
 			"validationConfig": {
-				"validateOn": "onBlur",
+				"validateOn": "onChange",
 				"fieldValidations": {
 					"required": {
 						"value": true,
@@ -58,7 +61,7 @@
 					},
 					"maxLength": {
 						"value": 10,
-						"message": "Only 5 characters are allowed."
+						"message": "Only 10 characters are allowed."
 					},
 					"pattern": {
 						"value": "^[0-9]{5}(?:-[0-9]{4})?$",
@@ -80,18 +83,19 @@
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
 			"label": "Next",
-			"navigateTo": "/slide3"
+			"type": "button"
 		},
 		"buttonPrev": {
 			"path": "wizard.cardA.buttonsContainer.buttonPrev",
-			"label": "Back",
-			"navigateTo": "/slide1"
+			"label": "Back"
 		}
 	},
 	{
 		"isRequired": true,
 		"path": "wizard.cardA",
 		"route": "/slide3",
+		"nextNavigateTo": "/slide1",
+		"prevNavigateTo": "/slide2",
 		"title": "General Information",
 		"subtitle": "We use this information to calculate fuel costs and applicable incentives",
 		"content": {
@@ -132,13 +136,13 @@
 		},
 		"buttonNext": {
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
-			"label": "Next",
-			"navigateTo": "/slide1"
+			"label": "Save",
+			"type": "submit"
+
 		},
 		"buttonPrev": {
 			"path": "wizard.cardA.buttonsContainer.buttonPrev",
-			"label": "Back",
-			"navigateTo": "/slide2"
+			"label": "Back"
 		}
 	}
 ]

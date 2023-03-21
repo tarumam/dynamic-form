@@ -1,4 +1,4 @@
-import { BaseComponentInterface } from "../../CommonTypes/baseComponentInterface";
+import { BaseComponentInterface } from "../../../CommonTypes/baseComponentInterface";
 
 export interface CardAType extends BaseComponentInterface {
 

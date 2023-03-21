@@ -1,6 +1,6 @@
 import React from "react";
 import { TextBox } from "./TextBox";
-import { CardA } from "./WizardCards/CardA";
+import { CardA } from "./Wizard/WizardCards/CardA";
 import { Dropdown } from "./Dropdown";
 import { CardIcon } from "./CardIcon";
 import { CardIconList } from "./CardIconList";
@@ -21,7 +21,7 @@ type DynamicComponent = {
 
 export const BuildComponent = ({ id, type, path, ...props }: DynamicComponent): JSX.Element | null => {
 
-  if(!id){
+  if (!id) {
     console.warn(`Warning: No Id defined '${type} - ${path}'.`);
   }
 

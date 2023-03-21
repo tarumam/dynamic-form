@@ -1,42 +1,37 @@
-import { CardA } from "../WizardCards/CardA";
+import { CardA } from "./WizardCards/CardA";
 import { Container, StepsContainer, Step, StepsIndicatorContainer } from "./styles";
 import { WizardType } from "./types";
-import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Navigate, useNavigate } from "react-router-dom";
 import { BuildComponent } from "..";
-import { useCallback, useState } from "react";
 import { If } from "../If";
-import { LinkButton } from "../Buttons/LinkButton";
+import { ButtonA } from "../Buttons/ButtonA";
+import { useForm } from "react-hook-form";
 
-
-const initialState = (steps: WizardType['steps']) => {
-  return steps.reduce<{ [id: string]: string }>((acc, step) => {
-    if (step.content.id) {
-      return {
-        ...acc,
-        [step.content.id]: ''
-      };
-    }
-    return acc;
-  }, {});
-};
 
 export const Wizard = ({ path, steps }: WizardType) => {
-  const [stepsManager, setStepsManager] = useState(initialState(steps));
+  const { handleSubmit, register, control, trigger, formState, setValue } = useForm({
+    mode: 'onBlur',
+  });
+
+
+  const navigate = useNavigate();
 
   const { pathname } = useLocation();
   const routes = steps.map(step => step.route);
   const activeIndex = steps.findIndex(step => step.route === pathname) + 1;
 
-  const getStateValue = useCallback((id: string) => {
-    const result = stepsManager[id];
-    return result;
-  }, [stepsManager]);
+  const moveNext = (route: string): void => {
+    navigate(route);
+  }
 
-  const onChange = useCallback((key: string, value: any) => {
-    const newStepsManager = { ...stepsManager };
-    newStepsManager[key] = value;
-    setStepsManager(newStepsManager);
-  }, [stepsManager]);
+  const moveBack = (route: string): void => {
+    navigate(route);
+  }
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+    debugger
+  }
 
   return (
     <Container path={path}>
@@ -51,6 +46,8 @@ export const Wizard = ({ path, steps }: WizardType) => {
                   isActive={routes.indexOf(pathname) >= routes.indexOf(step.route)}
                   isRequired={step.isRequired}
                   route={step.route}
+                  prevNavigateTo=""
+                  nextNavigateTo=""
                 />
               </Link>)
             }
@@ -62,33 +59,46 @@ export const Wizard = ({ path, steps }: WizardType) => {
               key={`${step.route}_${idx}`}
               path={step.route}
               element={
-                <CardA path='wizard.cardA'
-                  title={step.title}
-                  subtitle={step.subtitle}
-                  buttonPrev={step.buttonPrev &&
-                    <LinkButton
-                      navigateTo={step.buttonPrev.navigateTo}
-                      path={step.buttonPrev.path}
-                      label={step.buttonPrev.label}
-                      isActive={true}
-                    />}
-                  buttonNext={step.buttonNext &&
-                    <LinkButton
-                      navigateTo={step.buttonNext.navigateTo}
-                      path={step.buttonNext.path}
-                      label={step.buttonNext!.label}
-                      isActive={step.isRequired ? !!getStateValue(step.content.id) : true}
-                    />}
-                >
-                  <BuildComponent
-                    {...step.content}
-                    path={step.content.path}
-                    id={step.content.id}
-                    type={step.content.type}
-                    onChange={onChange}
-                    value={getStateValue(step.content.id)} />
-                </CardA>}
-            />)}
+                <form name={`wizard_step${idx}`} onSubmit={handleSubmit(onSubmit)}>
+                  <CardA path='wizard.cardA'
+                    title={step.title}
+                    subtitle={step.subtitle}
+                    buttonPrev={step.buttonPrev &&
+                      <ButtonA
+                        id={`${step.buttonPrev.type}_${idx}`}
+                        path={step.buttonPrev.path}
+                        label={step.buttonPrev.label}
+                        isActive={true}
+                        onClick={() => moveBack(step.prevNavigateTo)}
+                        type="button"
+                      />}
+                    buttonNext={step.buttonNext &&
+                      <ButtonA
+                        id={`${step.buttonNext.type}_${idx}`}
+                        path={step.buttonNext.path}
+                        label={step.buttonNext!.label}
+                        isActive={true}
+                        onClick={() => moveNext(step.nextNavigateTo)}
+                        type={step.buttonNext.type}
+                      />}
+                  >
+                    <BuildComponent
+                      {...step.content}
+                      path={step.content.path}
+                      id={step.content.id}
+                      type={step.content.type}
+                      register={register}
+                      trigger={trigger}
+                      name={step.content.name}
+                      control={control}
+                      formState={formState}
+                      setValue={setValue}
+                    />
+                  </CardA>
+                </form>
+              }
+            />
+          )}
           <Route path="*" element={<Navigate to={steps[0].route} />} />
         </Routes>
       </If>

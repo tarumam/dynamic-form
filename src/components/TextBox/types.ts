@@ -6,6 +6,10 @@ export interface TextBoxProps extends BaseComponentInterface {
   hint: string;
   value: string;
   validationConfig: ValidationConfig;
+  register: any;
+  trigger: any;
+  setValue: any;
+  formState: any;
 }
 
 export interface TextBoxInputType extends BaseComponentInterface {

@@ -1,6 +1,5 @@
 import { Header } from './components/Header';
 import { Wizard } from './components/Wizard';
-import { GlobalStyle } from './styles/global';
 import Theme from './Theme';
 import { BrowserRouter, } from "react-router-dom";
 import { useEffect, useState } from 'react';
@@ -31,7 +30,6 @@ export function App() {
       <>
         {customerSettings &&
           <Theme theme={customerSettings}>
-            <GlobalStyle />
             <BrowserRouter>
               <Header path='header' />
               <Wizard path='wizard' steps={customerData} />

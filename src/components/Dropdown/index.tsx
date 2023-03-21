@@ -1,25 +1,28 @@
 import { Label } from "../Label";
 import { DropdownContainer, Select } from "./styles";
-import { DropdownComponentParams, Option } from "./types";
+import { DropdownComponentParams } from "./types";
+import { Controller } from "react-hook-form";
 
-export const Dropdown = ({ id, label, path, options, value, onChange }: DropdownComponentParams) => {
+export const Dropdown = ({ register, control, name, id, label, path, options, value, onChange }: DropdownComponentParams) => {
 
-  const selectedOption: Option = options?.find(o => o.value === value) || { label: '', value: '' };
-
-  const handleDropdownChange = (value: Option | any) => {
-    onChange && onChange(id, value?.value);
-  };
-
+  const componentName = name ?? id;
   return (
-    <DropdownContainer>
-      {label && <Label path={`${path}.label`} htmlFor={id} text={label} />}
-      <Select
-        id={id}
-        path={path}
-        value={selectedOption}
-        options={options}
-        classNamePrefix={'react-select'}
-        onChange={handleDropdownChange} />
-    </DropdownContainer>
-  );
+    <Controller
+      name={componentName}
+      control={control}
+      defaultValue=""
+      render={({ field }) => (
+        <DropdownContainer>
+          {label && <Label path={`${path}.label`} htmlFor={id} text={label} />}
+          <Select
+            {...field}
+            id={id}
+            path={path}
+            options={options}
+            classNamePrefix={'react-select'}
+          />
+        </DropdownContainer>
+      )}
+    />
+  )
 }
