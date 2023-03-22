@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 
 
 export const Wizard = ({ path, steps }: WizardType) => {
-  const { handleSubmit, register, control, trigger, formState, setValue } = useForm({
+  const { handleSubmit, register, control, trigger, formState, setValue, setFocus } = useForm({
     mode: 'onBlur',
   });
 
@@ -21,7 +21,15 @@ export const Wizard = ({ path, steps }: WizardType) => {
   const activeIndex = steps.findIndex(step => step.route === pathname) + 1;
 
   const moveNext = (route: string): void => {
-    navigate(route);
+    const { errors } = formState;
+    const fieldsWithErrors = Object.keys(errors);
+
+    if (fieldsWithErrors.length > 0) {
+      setFocus(fieldsWithErrors[0]);
+    }
+    else {
+      navigate(route);
+    }
   }
 
   const moveBack = (route: string): void => {
