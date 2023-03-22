@@ -1,16 +1,17 @@
-import { LabelHTMLAttributes } from "react";
-import { BaseComponentInterface } from "../CommonTypes/baseComponentInterface";
+import { BaseComponentInterface, ValidationConfig } from "../CommonTypes/baseComponentInterface";
 
 export interface DropdownComponentParams extends BaseComponentInterface {
-  register: any,
   id: string,
   label: string,
   path: string,
   options: Option[],
-  value: string,
   name: string,
   control: any,
-  onChange: (id: string, value: string) => void;
+  trigger: any,
+  validationConfig: ValidationConfig,
+  formState: any,
+  hint: string,
+  setValue: any,
 }
 
 export interface DropdownType extends BaseComponentInterface {

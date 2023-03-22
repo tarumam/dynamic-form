@@ -1,3 +1,4 @@
+import { FieldError } from "react-hook-form";
 export interface BaseComponentInterface {
   props?: any;
   path: string;
@@ -24,4 +25,8 @@ export interface ValidationsParams {
 export interface DataValidationParams {
   validData: string[],
   message: string,
+}
+
+export interface CustomFieldError extends FieldError {
+  message: string;
 }

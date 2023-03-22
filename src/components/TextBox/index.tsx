@@ -1,11 +1,7 @@
 import { HintInput, TextInput, TextBoxContainer } from "./styles";
 import { TextBoxProps } from "./types";
 import { Label } from "../Label";
-import { FieldError } from "react-hook-form";
-
-interface CustomFieldError extends FieldError {
-  message: string;
-}
+import { CustomFieldError } from "../CommonTypes/baseComponentInterface";
 
 export const TextBox = ({ register, trigger, setValue, formState, path, id, label, hint, value, validationConfig }: TextBoxProps) => {
   const { fieldValidations, validateOn, dataValidations } = validationConfig;

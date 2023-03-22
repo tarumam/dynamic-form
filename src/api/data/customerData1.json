@@ -103,6 +103,16 @@
 			"path": "wizard.cardA.dropdown",
 			"type": "Dropdown",
 			"label": "Building Type",
+			"hint": "Select the best option",
+			"validationConfig": {
+				"validateOn": "onChange",
+				"fieldValidations": {
+					"required": {
+						"value": true,
+						"message": "required field"
+					}					
+				}
+			},
 			"options": [
 				{
 					"label": "Home (garage)",
@@ -138,7 +148,6 @@
 			"path": "wizard.cardA.buttonsContainer.buttonNext",
 			"label": "Save",
 			"type": "submit"
-
 		},
 		"buttonPrev": {
 			"path": "wizard.cardA.buttonsContainer.buttonPrev",
